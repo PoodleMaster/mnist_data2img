@@ -66,15 +66,15 @@ def deldir(path):
 # png save
 #-------------------------------------------------------------------------------
 def save(data, index, num, dir):
+    filename = dir + "/" + str(num) + "/test" + "{0:05d}".format(index) + ".png"
+    debug_print(filename)
     debug_print(data)
     img = Image.new("L", (28, 28))
     pix = img.load()
     for i in range(28):
         for j in range(28):
             pix[j, i] = int(data[i,j])
-    filename = dir + "/" + str(num) + "/test" + "{0:05d}".format(index) + ".png"
     img.save(filename)
-    debug_print(filename)
 
 # [[  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0]
 #  [  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0]
