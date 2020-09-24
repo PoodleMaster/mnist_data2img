@@ -64,7 +64,7 @@ def deldir(path):
 #-------------------------------------------------------------------------------
 # png save
 #-------------------------------------------------------------------------------
-def save(data, index, num, dir):
+def save(data, total, index, num, dir):
     debug_print(data)
     img = Image.new("L", (28, 28))
     pix = img.load()
@@ -74,8 +74,8 @@ def save(data, index, num, dir):
     filename = dir + "/" + str(num) + "/test" + "{0:05d}".format(index) + ".png"
     img.save(filename)
     
-    pro_bar = ('=' * num) + (' ' * (index - num))
-    print('\r[{0}] {1}%'.format(pro_bar, num / index * 100.), end='')
+    pro_bar = ('=' * index) + (' ' * (total - index))
+    print('\r[{0}] {1}%'.format(pro_bar, index / total * 100.), end='')
 
 # [[  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0]
 #  [  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0]
@@ -127,7 +127,7 @@ def main():
         if os.path.isdir(dirname) is False:
             os.mkdir(dirname)
     for i in range(train_data.shape[0]):
-        save(train_data[i], i, train_label[i], DIR_train)
+        save(train_data[i], train_data.shape[0], i, train_label[i], DIR_train)
 
     #### valid ####
     dirname = DIR_valid
@@ -139,7 +139,7 @@ def main():
         if os.path.isdir(dirname) is False:
             os.mkdir(dirname)
     for i in range(valid_data.shape[0]):
-        save(valid_data[i], i, valid_label[i], DIR_valid)
+        save(valid_data[i], valid_data.shape[0], i, valid_label[i], DIR_valid)
 
 if __name__ == '__main__':
     main()
