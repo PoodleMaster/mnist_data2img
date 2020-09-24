@@ -55,7 +55,7 @@ def deldir(path):
 # png save
 #-------------------------------------------------------------------------------
 def save(data, index, num, dir):
-#   print(data)
+    debug_print(data)
     img = Image.new("L", (28, 28))
     pix = img.load()
     for i in range(28):
