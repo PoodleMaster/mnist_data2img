@@ -73,7 +73,7 @@ def save(data, index, num, dir):
     pix = img.load()
     for i in range(28):
         for j in range(28):
-            pix[j, i] = int(data[i,j])
+            pix[j, i] = int(data[i, j])
     img.save(filename)
 
 # /content/drive/My Drive/qiita_share/mnist_train_data/5/test00000.png
