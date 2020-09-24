@@ -73,7 +73,9 @@ def save(data, index, num, dir):
             pix[j, i] = int(data[i,j])
     filename = dir + "/" + str(num) + "/test" + "{0:05d}".format(index) + ".png"
     img.save(filename)
-    print('\r%s', filename, end='')
+    
+    pro_bar = ('=' * num) + (' ' * (index - num))
+    print('\r[{0}] {1}%'.format(pro_bar, i / index * 100.), end='')
 
 # [[  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0]
 #  [  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0]
