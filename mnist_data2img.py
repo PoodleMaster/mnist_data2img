@@ -86,18 +86,6 @@ def main():
     #### mnist data read ####
     (train_data, train_label), (valid_data, valid_label) = mnist.load_data()
 
-    #### valid ####
-    dirname = DIR_valid
-    if os.path.isdir(dirname) is False:
-        os.mkdir(dirname)
-
-    for i in range(10):
-        dirname = DIR_valid + "/" + str(i)
-        if os.path.isdir(dirname) is False:
-            os.mkdir(dirname)
-    for i in range(valid_data.shape[0]):
-        save(valid_data[i], i, valid_label[i], DIR_valid)
-
     #### train ####
     dirname = DIR_train
     if os.path.isdir(dirname) is False:
@@ -110,6 +98,17 @@ def main():
     for i in range(train_data.shape[0]):
         save(train_data[i], i, train_label[i], DIR_train)
 
+    #### valid ####
+    dirname = DIR_valid
+    if os.path.isdir(dirname) is False:
+        os.mkdir(dirname)
+
+    for i in range(10):
+        dirname = DIR_valid + "/" + str(i)
+        if os.path.isdir(dirname) is False:
+            os.mkdir(dirname)
+    for i in range(valid_data.shape[0]):
+        save(valid_data[i], i, valid_label[i], DIR_valid)
 
 if __name__ == '__main__':
     main()
