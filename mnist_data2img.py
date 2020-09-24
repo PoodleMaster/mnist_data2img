@@ -15,6 +15,7 @@ global args
 # validation
 #-------------------------------------------------------------------------------
 def validation():
+    global args
     parser = argparse.ArgumentParser()
     parser.add_argument('-n', '--new',
                         action="store_true",
@@ -29,6 +30,7 @@ def validation():
 # argument
 #-------------------------------------------------------------------------------
 def argument():
+    global args
     validation()
     if args.new:
         print("Create new png data from mnist.")
@@ -40,6 +42,7 @@ def argument():
 # debug print
 #-------------------------------------------------------------------------------
 def debug_print(data):
+    global args
     if args.debug:
         print(type(data))
         print(data)
