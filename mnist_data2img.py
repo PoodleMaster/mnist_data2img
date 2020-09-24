@@ -3,6 +3,9 @@ import argparse
 import shutil
 from PIL import Image
 from keras.datasets import mnist
+from google.colab import drive
+
+drive.mount('/content/drive')
 
 DIR_train = "/content/drive/My Drive/qiita_share/mnist_train_data"
 DIR_valid = "/content/drive/My Drive/qiita_share/mnist_valid_data"
