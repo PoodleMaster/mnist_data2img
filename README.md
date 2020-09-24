@@ -4,7 +4,7 @@ Converts MNIST data to png.
 ## ■Requirements
 Google Colab
 
-## ■starting method
+## ■Starting Method
 See [mnist_data2img.ipynb](https://github.com/PoodleMaster/mnist_data2img/blob/master/mnist_data2img.ipynb)
 
 ## ■Contributing
