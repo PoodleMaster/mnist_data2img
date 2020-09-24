@@ -76,6 +76,7 @@ def save(data, index, num, dir):
             pix[j, i] = int(data[i,j])
     img.save(filename)
 
+# /content/drive/My Drive/qiita_share/mnist_train_data/5/test00000.png
 # [[  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0]
 #  [  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0]
 #  [  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0]
@@ -104,7 +105,6 @@ def save(data, index, num, dir):
 #  [  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0]
 #  [  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0]
 #  [  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0]]
-# /content/drive/My Drive/qiita_share/mnist_train_data/5/test00000.png
 
 
 #-------------------------------------------------------------------------------
