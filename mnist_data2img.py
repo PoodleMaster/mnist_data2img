@@ -66,7 +66,7 @@ def deldir(path):
 # png save
 #-------------------------------------------------------------------------------
 def save(data, index, num, dir):
-    filename = dir + "/" + str(num) + "/test" + "{0:05d}".format(index) + ".png"
+    filename = dir + "/" + str(num) + "/data" + "{0:05d}".format(index) + ".png"
     debug_print(filename)
     debug_print(data)
     img = Image.new("L", (28, 28))
@@ -76,7 +76,7 @@ def save(data, index, num, dir):
             pix[j, i] = int(data[i, j])
     img.save(filename)
 
-# /content/drive/My Drive/qiita_share/mnist_train_data/5/test00000.png
+# /content/drive/My Drive/qiita_share/mnist_train_data/5/data00000.png
 # [[  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0]
 #  [  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0]
 #  [  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0]
