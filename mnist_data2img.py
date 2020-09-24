@@ -75,7 +75,7 @@ def save(data, index, num, dir):
     img.save(filename)
     
     pro_bar = ('=' * num) + (' ' * (index - num))
-    print('\r[{0}] {1}%'.format(pro_bar, i / index * 100.), end='')
+    print('\r[{0}] {1}%'.format(pro_bar, num / index * 100.), end='')
 
 # [[  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0]
 #  [  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0]
