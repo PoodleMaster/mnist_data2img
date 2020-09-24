@@ -46,7 +46,6 @@ def debug_print(data):
     if args.debug:
         print(type(data))
         print(data)
-        print("-------------------------------------")
 
         
 #-------------------------------------------------------------------------------
@@ -74,7 +73,7 @@ def save(data, index, num, dir):
             pix[j, i] = int(data[i,j])
     filename = dir + "/" + str(num) + "/test" + "{0:05d}".format(index) + ".png"
     img.save(filename)
-    print(filename)
+    print("\r", filename)
 
 # [[  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0]
 #  [  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0]
