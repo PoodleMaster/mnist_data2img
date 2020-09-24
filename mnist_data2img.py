@@ -73,7 +73,7 @@ def save(data, index, num, dir):
             pix[j, i] = int(data[i,j])
     filename = dir + "/" + str(num) + "/test" + "{0:05d}".format(index) + ".png"
     img.save(filename)
-    print("\r", filename, end="")
+    print(filename)
 
 # [[  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0]
 #  [  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0]
