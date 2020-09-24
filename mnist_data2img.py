@@ -19,10 +19,25 @@ def validation():
     parser.add_argument('-n', '--new',
                         action="store_true",
                         help='new create option.')
+    parser.add_argument('-d', '--debug',
+                        action="store_true",
+                        help='debug option.')
     args = parser.parse_args()
     return args
 
 
+#-------------------------------------------------------------------------------
+# argument
+#-------------------------------------------------------------------------------
+def argument():
+    #### Argument check ####
+    args = validation()
+    if args.new:
+        print("Create new png data from mnist.")
+        deldir(DIR_valid)
+        deldir(DIR_train)
+
+        
 #-------------------------------------------------------------------------------
 # del directory
 #-------------------------------------------------------------------------------
@@ -50,17 +65,22 @@ def save(data, index, num, dir):
     img.save(filename)
     print(filename)
 
+ 
+#-------------------------------------------------------------------------------
+# debug print
+#-------------------------------------------------------------------------------
+def debug_print(data):
+    if args.debug:
+        print(type(data))
+        print(data)
+        print("-------------------------------------")
 
+    
 #-------------------------------------------------------------------------------
 # main
 #-------------------------------------------------------------------------------
 def main():
-    #### Argument check ####
-    args = validation()
-    if args.new:
-        print("Create new png data from mnist.")
-        deldir(DIR_valid)
-        deldir(DIR_train)
+    argument()
 
     #### mnist data read ####
     (train_data, train_label), (valid_data, valid_label) = mnist.load_data()
