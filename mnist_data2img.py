@@ -9,7 +9,7 @@ drive.mount('/content/drive')
 
 DIR_train = "/content/drive/My Drive/qiita_share/mnist_train_data"
 DIR_valid = "/content/drive/My Drive/qiita_share/mnist_valid_data"
-
+global args
 
 #-------------------------------------------------------------------------------
 # validation
@@ -23,19 +23,18 @@ def validation():
                         action="store_true",
                         help='debug option.')
     args = parser.parse_args()
-    return args
 
 
 #-------------------------------------------------------------------------------
 # argument
 #-------------------------------------------------------------------------------
 def argument():
-    #### Argument check ####
-    args = validation()
+    validation()
     if args.new:
         print("Create new png data from mnist.")
         deldir(DIR_valid)
         deldir(DIR_train)
+    return args
 
         
 #-------------------------------------------------------------------------------
