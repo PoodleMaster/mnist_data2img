@@ -9,7 +9,7 @@ from tqdm import tqdm
 drive.mount('/content/drive')
 
 DIR_train = "/content/drive/My Drive/qiita_share/mnist_train_data"
-DIR_valid = "/content/drive/My Drive/qiita_share/mnist_valid_data"
+DIR_test = "/content/drive/My Drive/qiita_share/mnist_test_data"
 global args
 
 #-------------------------------------------------------------------------------
@@ -114,7 +114,7 @@ def main():
     argument()
 
     # mnist data read #
-    (train_data, train_label), (valid_data, valid_label) = mnist.load_data()
+    (train_data, train_label), (test_data, test_label) = mnist.load_data()
 
     # train #
     dirname = DIR_train
@@ -129,16 +129,16 @@ def main():
         save(train_data[i], i, train_label[i], DIR_train)
 
     # valid #
-    dirname = DIR_valid
+    dirname = DIR_test
     if os.path.isdir(dirname) is False:
         os.mkdir(dirname)
 
     for i in range(10):
-        dirname = DIR_valid + "/" + str(i)
+        dirname = DIR_test + "/" + str(i)
         if os.path.isdir(dirname) is False:
             os.mkdir(dirname)
-    for i in tqdm(range(valid_data.shape[0])):
-        save(valid_data[i], i, valid_label[i], DIR_valid)
+    for i in tqdm(range(test_data.shape[0])):
+        save(test_data[i], i, test_label[i], DIR_test)
 
 if __name__ == '__main__':
     main()
