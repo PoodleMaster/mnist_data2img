@@ -35,8 +35,8 @@ def argument():
     validation()
     if args.new:
         print("Create new png data from mnist.")
-        deldir(DIR_valid)
         deldir(DIR_train)
+        deldir(DIR_test)
 
 
 #-------------------------------------------------------------------------------
