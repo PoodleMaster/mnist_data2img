@@ -65,8 +65,8 @@ def deldir(path):
 #-------------------------------------------------------------------------------
 # png save
 #-------------------------------------------------------------------------------
-def save(data, index, num, dir):
-    filename = dir + "/" + str(num) + "/data" + "{0:05d}".format(index) + ".png"
+def save(data, index, num, dirname):
+    filename = dirname + "/" + str(num) + "/data" + "{0:05d}".format(index) + ".png"
     debug_print(filename)
     debug_print(data)
     img = Image.new("L", (28, 28))
@@ -113,10 +113,10 @@ def save(data, index, num, dir):
 def main():
     argument()
 
-    #### mnist data read ####
+    # mnist data read #
     (train_data, train_label), (valid_data, valid_label) = mnist.load_data()
 
-    #### train ####
+    # train #
     dirname = DIR_train
     if os.path.isdir(dirname) is False:
         os.mkdir(dirname)
@@ -128,7 +128,7 @@ def main():
     for i in tqdm(range(train_data.shape[0])):
         save(train_data[i], i, train_label[i], DIR_train)
 
-    #### valid ####
+    # valid #
     dirname = DIR_valid
     if os.path.isdir(dirname) is False:
         os.mkdir(dirname)
