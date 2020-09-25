@@ -128,7 +128,7 @@ def main():
     for i in tqdm(range(train_data.shape[0])):
         save(train_data[i], i, train_label[i], DIR_train)
 
-    # valid #
+    # test #
     dirname = DIR_test
     if os.path.isdir(dirname) is False:
         os.mkdir(dirname)
